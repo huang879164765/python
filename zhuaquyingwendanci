@@ -1,0 +1,12 @@
+print(' 提取英文单词')
+import re
+
+pattern = re.compile(r'\b[a-zA-Z]+\b')
+with open('from.txt', encoding = 'utf-8') as fin:
+    a = fin.read()
+    b = re.findall(pattern, a)
+    b1 = sorted(b,reverse=True )
+    c = '\n'.join(b1)
+
+with open('to.txt','w') as fout:
+    fout.write(c)
